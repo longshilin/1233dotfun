@@ -362,11 +362,11 @@ $(function() {
                 return false;
                 break;
             // qrcode
-            case (tag.indexOf('icon-scan') != -1):
-                if ($('.icon-scan').hasClass('tg')) {
+            case (tag.indexOf('icon-wechat') != -1):
+                if ($('.icon-wechat').hasClass('tg')) {
                     $('#qr').toggle()
                 } else {
-                    $('.icon-scan').addClass('tg')
+                    $('.icon-wechat').addClass('tg')
                     $('#qr').qrcode({ width: 128, height: 128, text: location.href}).toggle()
                 }
                 return false;
@@ -458,7 +458,7 @@ $(function() {
                             // See Options -> getThumbBoundsFn section of documentation for more info
                             var thumbnail = imgs[index],
                                 pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                                rect = thumbnail.getBoundingClientRect(); 
+                                rect = thumbnail.getBoundingClientRect();
 
                             return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
                         }
@@ -469,7 +469,7 @@ $(function() {
                 return false;
                 break;
               // comment
-            case - 1 != tag.indexOf("comment"): 
+            case - 1 != tag.indexOf("comment"):
                 Diaspora.loading(),
                 comment = $('#gitalk-container');
                 gitalk = new Gitalk({
@@ -498,4 +498,3 @@ $(function() {
     }
     console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
 })
-
